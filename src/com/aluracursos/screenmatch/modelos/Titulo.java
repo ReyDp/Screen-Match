@@ -6,10 +6,12 @@ public class Titulo {
     private boolean incluidoEnElPlan;
     private double sumaDeEvaluaciones;
     private int totalEvaluaciones;
+    private int duracionEnMinutos;
 
-    public void setdatos (String nombre, int lanzamiento, boolean plan) {
+    public void setdatos (String nombre, int lanzamiento, int duracionEnMinutos, boolean plan) {
         this.nombre = nombre;
         this.fechaDeLanzamiento = lanzamiento;
+        this.duracionEnMinutos = duracionEnMinutos;
         this.incluidoEnElPlan = plan;
     }
 
@@ -29,11 +31,16 @@ public class Titulo {
         return totalEvaluaciones;
     }
 
+    public int getDuracionEnMinutos() {
+        return duracionEnMinutos;
+    }
+
     public void muestraFichaTecnica(){
         System.out.println("Titulo: "+getNombre());
         System.out.println("Fecha de lanzamiento: "+getFechaDeLanzamiento());
         System.out.println("Cantidad de evaluaciones: "+getTotalEvaluaciones());
         System.out.println("Calificación: "+calculaMedia());
+        System.out.println("Duración en minutos: "+getDuracionEnMinutos());
     }
 
     public void evalua (double nota){
