@@ -3,23 +3,30 @@ package com.aluracursos.screenmatch.modelos;
 public class Series extends Titulo {
 
     int temporadas;
-    int espisodiosPorTemporada;
-    String minutosPorEpisodio;
+    int episodiosPorTemporada;
+    int minutosPorEpisodio;
 
-    public void setinfoSeries (int temporadas, int espisodiosPorTemporada, String minutosPorEpisodio){
+    public void setInfoSeries(int temporadas, int episodiosPorTemporada, int minutosPorEpisodio) {
         this.temporadas = temporadas;
-        this.espisodiosPorTemporada = espisodiosPorTemporada;
+        this.episodiosPorTemporada = episodiosPorTemporada;
         this.minutosPorEpisodio = minutosPorEpisodio;
     }
 
     public int getTemporadas() {
         return temporadas;
     }
-    public int getEspisodiosPorTemporada() {
-        return espisodiosPorTemporada;
+
+    public int getEpisodiosPorTemporada() {
+        return episodiosPorTemporada;
     }
-    public String getMinutosPorEpisodio() {
+
+    public int getMinutosPorEpisodio() {
         return minutosPorEpisodio;
     }
 
+    @Override
+    public int getDuracionEnMinutos() {
+        return temporadas * episodiosPorTemporada * minutosPorEpisodio;
+    }
 }
+

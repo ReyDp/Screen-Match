@@ -3,16 +3,16 @@ package com.aluracursos.screenmatch.modelos;
 public class Titulo {
     private String nombre;
     private int fechaDeLanzamiento;
+    int duracionEnMinutos;
     private boolean incluidoEnElPlan;
     private double sumaDeEvaluaciones;
     private int totalEvaluaciones;
-    private int duracionEnMinutos;
 
     public void setdatos (String nombre, int lanzamiento, int duracionEnMinutos, boolean plan) {
         this.nombre = nombre;
         this.fechaDeLanzamiento = lanzamiento;
-        this.duracionEnMinutos = duracionEnMinutos;
         this.incluidoEnElPlan = plan;
+        this.duracionEnMinutos = duracionEnMinutos;
     }
 
     public String getNombre() {

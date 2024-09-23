@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Pelicula miPelicula = new Pelicula();
 
-        miPelicula.setdatos("Sherlock Holmes", 2009,  128,true);
+        miPelicula.setdatos("Sherlock Holmes", 2009,128,true);
         miPelicula.setDirector("Guy Ritchie","128 minutos");
 
         miPelicula.evalua(10);
@@ -19,8 +19,8 @@ public class Main {
 
         Series miSerie = new Series();
 
-        miSerie.setdatos("House of Dragons",2022,784,true);
-        miSerie.setinfoSeries(2,8,"49 minutos");
+        miSerie.setdatos("House of Dragons",2022,49,true);
+        miSerie.setInfoSeries(2,8,49);
 
         miSerie.evalua(9.8);
         miSerie.evalua(8.7);
@@ -31,7 +31,7 @@ public class Main {
         System.out.println("\n");
 
         Pelicula otraPelicula = new Pelicula();
-        otraPelicula.setdatos("Sherlock Holmes: Juego de Sombras", 2011,  129,true);
+        otraPelicula.setdatos("Sherlock Holmes: Juego de Sombras", 2011, 129,true);
         otraPelicula.setDirector("Guy Ritchie","128 minutos");
 
         otraPelicula.evalua(10);
