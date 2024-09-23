@@ -1,10 +1,16 @@
 import com.aluracurson.screenmatch.calculos.CalculadoraDeTiempo;
+import com.aluracurson.screenmatch.calculos.Recomendaciones;
+import com.aluracursos.screenmatch.modelos.Episodio;
 import com.aluracursos.screenmatch.modelos.Pelicula;
 import com.aluracursos.screenmatch.modelos.Series;
 
 public class Main {
     public static void main(String[] args) {
         Pelicula miPelicula = new Pelicula();
+        Recomendaciones filtro = new Recomendaciones();
+        Series miSerie = new Series();
+        CalculadoraDeTiempo calcular = new CalculadoraDeTiempo();
+        Episodio episodio = new Episodio();
 
         miPelicula.setdatos("Sherlock Holmes", 2009,128,true);
         miPelicula.setDirector("Guy Ritchie","128 minutos");
@@ -14,10 +20,9 @@ public class Main {
         miPelicula.evalua(9.7);
 
         miPelicula.muestraFichaTecnica();
+        filtro.filtra(miPelicula);
 
         System.out.println("\n");
-
-        Series miSerie = new Series();
 
         miSerie.setdatos("House of Dragons",2022,49,true);
         miSerie.setInfoSeries(2,8,49);
@@ -27,6 +32,9 @@ public class Main {
         miSerie.evalua(7.9);
 
         miSerie.muestraFichaTecnica();
+        episodio.setEpisodios(miSerie,"The Heirs of the Dragon", 1, 300);
+        filtro.filtra(episodio);
+        int totalVisualizaciones = episodio.getTotalVisualizaciones();
 
         System.out.println("\n");
 
@@ -39,8 +47,8 @@ public class Main {
         otraPelicula.evalua(9.7);
 
         otraPelicula.muestraFichaTecnica();
+        filtro.filtra(otraPelicula);
 
-        CalculadoraDeTiempo calcular = new CalculadoraDeTiempo();
         calcular.incluye(miPelicula);
         calcular.incluye(miSerie);
         calcular.incluye(otraPelicula);
