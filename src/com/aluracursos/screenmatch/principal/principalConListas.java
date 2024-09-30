@@ -5,6 +5,8 @@ import com.aluracursos.screenmatch.modelos.Series;
 import com.aluracursos.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class principalConListas {
     public static void main(String[] args) {
@@ -26,9 +28,23 @@ public class principalConListas {
         for (Titulo item : lista){
             System.out.println(item.getNombre());
             if(item instanceof Pelicula pelicula){
-                System.out.println("Calificacion: "+pelicula.getCalificacion()+" Estrellas");
-                System.out.println();
+                System.out.println("Calificacion: "+pelicula.getCalificacion()+" Estrellas"+"\n");
             }
         }
+        System.out.println("\n");
+
+        ArrayList<String> listaDeArtistas = new ArrayList<>();
+        listaDeArtistas.add("Robert Downey Jr.");
+        listaDeArtistas.add("Antonio Banderas");
+        listaDeArtistas.add("Milly Alcock");
+        listaDeArtistas.add("Angelina Jolie");
+
+        System.out.println("Lista de artistas no ordenada: "+listaDeArtistas+"\n");
+
+        Collections.sort(listaDeArtistas);
+        System.out.println("Lista de artistas ordenados: "+listaDeArtistas+"\n");
+
+        Collections.sort(lista);
+        System.out.println("Nombre de peliculas ordenados: "+lista);
     }
 }
