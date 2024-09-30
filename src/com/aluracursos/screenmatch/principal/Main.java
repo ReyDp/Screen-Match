@@ -1,3 +1,5 @@
+package com.aluracursos.screenmatch.principal;
+
 import com.aluracurson.screenmatch.calculos.CalculadoraDeTiempo;
 import com.aluracurson.screenmatch.calculos.Recomendaciones;
 import com.aluracursos.screenmatch.modelos.Episodio;
@@ -5,7 +7,6 @@ import com.aluracursos.screenmatch.modelos.Pelicula;
 import com.aluracursos.screenmatch.modelos.Series;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Main {
     public static void main(String[] args) {

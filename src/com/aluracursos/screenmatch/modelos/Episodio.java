@@ -31,7 +31,7 @@ public class Episodio implements Calificacion {
     }
 
     @Override
-    public int getCalificacion() {
+    public double getCalificacion() {
         if(totalVisualizaciones > 100) {
             return 4;
         }else {

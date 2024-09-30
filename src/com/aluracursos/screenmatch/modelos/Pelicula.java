@@ -20,8 +20,8 @@ public class Pelicula extends Titulo implements Calificacion {
     }
 
     @Override
-    public int getCalificacion() {
-        return (int) calculaMedia() / 2;
+    public double getCalificacion() {
+        return (double) calculaMedia() / 2;
     }
 
     @Override
