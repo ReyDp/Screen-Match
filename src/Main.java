@@ -4,6 +4,8 @@ import com.aluracursos.screenmatch.modelos.Episodio;
 import com.aluracursos.screenmatch.modelos.Pelicula;
 import com.aluracursos.screenmatch.modelos.Series;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         Pelicula miPelicula = new Pelicula();
@@ -54,5 +56,20 @@ public class Main {
         calcular.incluye(otraPelicula);
         System.out.println("Tiempo total en minutos para ver todos los titulos: "
                 +calcular.getTiempoTotal());
+
+        var peliculaNueva = new Pelicula();
+        peliculaNueva.setdatos("Intensamente 2",2024,124,true);
+
+        ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();
+        listaDePeliculas.add(miPelicula);
+        listaDePeliculas.add(otraPelicula);
+        listaDePeliculas.add(peliculaNueva);
+
+        System.out.println("Tamaño de la lista: "+listaDePeliculas.size());
+        System.out.println("La primera pelicula es: "+listaDePeliculas.get(0).getNombre());
+
+        System.out.println(listaDePeliculas.toString());
+
+        System.out.println("Pelicula: "+listaDePeliculas.get(0).toString());
     }
 }
