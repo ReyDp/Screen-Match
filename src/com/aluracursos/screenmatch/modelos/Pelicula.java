@@ -6,8 +6,8 @@ public class Pelicula extends Titulo implements Calificacion {
     private String director;
     private String durancioEnMinutos;
 
-    public Pelicula(String nombre) {
-        this.setNombre(nombre);
+    public Pelicula(String nombre, int fechaDeLanzamiento) {
+        super(nombre, fechaDeLanzamiento);
     }
 
     public String getDirector() {

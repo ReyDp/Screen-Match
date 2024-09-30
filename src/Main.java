@@ -10,12 +10,11 @@ import java.util.Objects;
 public class Main {
     public static void main(String[] args) {
         Recomendaciones filtro = new Recomendaciones();
-        Series miSerie = new Series();
         CalculadoraDeTiempo calcular = new CalculadoraDeTiempo();
         Episodio episodio = new Episodio();
 
-        Pelicula miPelicula = new Pelicula("Sherlock Holmes");
-        miPelicula.setdatos( 2009,128,true);
+        Pelicula miPelicula = new Pelicula("Sherlock Holmes", 2009);
+        miPelicula.setdatos( 128,true);
         miPelicula.setDirector("Guy Ritchie","128 minutos");
 
         miPelicula.evalua(10);
@@ -27,7 +26,8 @@ public class Main {
 
         System.out.println("\n");
 
-        miSerie.setdatos(2022,49,true);
+        Series miSerie = new Series("House of Dragons", 2022);
+        miSerie.setdatos(49,true);
         miSerie.setInfoSeries(2,8,49);
 
         miSerie.evalua(9.8);
@@ -41,8 +41,8 @@ public class Main {
 
         System.out.println("\n");
 
-        Pelicula otraPelicula = new Pelicula("Sherlock Holmes: Juego de sombras");
-        otraPelicula.setdatos( 2011, 129,true);
+        Pelicula otraPelicula = new Pelicula("Sherlock Holmes: Juego de sombras", 2011);
+        otraPelicula.setdatos(  129,true);
         otraPelicula.setDirector("Guy Ritchie","128 minutos");
 
         otraPelicula.evalua(10);
@@ -58,8 +58,8 @@ public class Main {
         System.out.println("Tiempo total en minutos para ver todos los titulos: "
                 +calcular.getTiempoTotal());
 
-        var peliculaNueva = new Pelicula("Intensamente");
-        peliculaNueva.setdatos(2024,124,true);
+        var peliculaNueva = new Pelicula("Intensamente", 2024);
+        peliculaNueva.setdatos(124,true);
 
         ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();
         listaDePeliculas.add(miPelicula);

@@ -6,6 +6,10 @@ public class Series extends Titulo {
     int episodiosPorTemporada;
     int minutosPorEpisodio;
 
+    public Series(String nombre, int fechaDeLanzamiento) {
+        super(nombre, fechaDeLanzamiento);
+    }
+
     public void setInfoSeries(int temporadas, int episodiosPorTemporada, int minutosPorEpisodio) {
         this.temporadas = temporadas;
         this.episodiosPorTemporada = episodiosPorTemporada;

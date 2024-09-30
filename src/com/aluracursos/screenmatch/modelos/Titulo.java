@@ -12,9 +12,12 @@ public class Titulo {
         this.nombre = nombre;
     }
 
-    public void setdatos (int lanzamiento, int duracionEnMinutos, boolean plan) {
+    public Titulo(String nombre, int fechaDeLanzamiento) {
         this.nombre = nombre;
-        this.fechaDeLanzamiento = lanzamiento;
+        this.fechaDeLanzamiento = fechaDeLanzamiento;
+    }
+
+    public void setdatos (int duracionEnMinutos, boolean plan) {
         this.incluidoEnElPlan = plan;
         this.duracionEnMinutos = duracionEnMinutos;
     }
