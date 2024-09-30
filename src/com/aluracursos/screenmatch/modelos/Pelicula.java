@@ -6,6 +6,10 @@ public class Pelicula extends Titulo implements Calificacion {
     private String director;
     private String durancioEnMinutos;
 
+    public Pelicula(String nombre) {
+        this.setNombre(nombre);
+    }
+
     public String getDirector() {
         return director;
     }

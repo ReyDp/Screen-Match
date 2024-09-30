@@ -8,7 +8,11 @@ public class Titulo {
     private double sumaDeEvaluaciones;
     private int totalEvaluaciones;
 
-    public void setdatos (String nombre, int lanzamiento, int duracionEnMinutos, boolean plan) {
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setdatos (int lanzamiento, int duracionEnMinutos, boolean plan) {
         this.nombre = nombre;
         this.fechaDeLanzamiento = lanzamiento;
         this.incluidoEnElPlan = plan;

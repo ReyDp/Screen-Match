@@ -5,16 +5,17 @@ import com.aluracursos.screenmatch.modelos.Pelicula;
 import com.aluracursos.screenmatch.modelos.Series;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Main {
     public static void main(String[] args) {
-        Pelicula miPelicula = new Pelicula();
         Recomendaciones filtro = new Recomendaciones();
         Series miSerie = new Series();
         CalculadoraDeTiempo calcular = new CalculadoraDeTiempo();
         Episodio episodio = new Episodio();
 
-        miPelicula.setdatos("Sherlock Holmes", 2009,128,true);
+        Pelicula miPelicula = new Pelicula("Sherlock Holmes");
+        miPelicula.setdatos( 2009,128,true);
         miPelicula.setDirector("Guy Ritchie","128 minutos");
 
         miPelicula.evalua(10);
@@ -26,7 +27,7 @@ public class Main {
 
         System.out.println("\n");
 
-        miSerie.setdatos("House of Dragons",2022,49,true);
+        miSerie.setdatos(2022,49,true);
         miSerie.setInfoSeries(2,8,49);
 
         miSerie.evalua(9.8);
@@ -40,8 +41,8 @@ public class Main {
 
         System.out.println("\n");
 
-        Pelicula otraPelicula = new Pelicula();
-        otraPelicula.setdatos("Sherlock Holmes: Juego de Sombras", 2011, 129,true);
+        Pelicula otraPelicula = new Pelicula("Sherlock Holmes: Juego de sombras");
+        otraPelicula.setdatos( 2011, 129,true);
         otraPelicula.setDirector("Guy Ritchie","128 minutos");
 
         otraPelicula.evalua(10);
@@ -57,8 +58,8 @@ public class Main {
         System.out.println("Tiempo total en minutos para ver todos los titulos: "
                 +calcular.getTiempoTotal());
 
-        var peliculaNueva = new Pelicula();
-        peliculaNueva.setdatos("Intensamente 2",2024,124,true);
+        var peliculaNueva = new Pelicula("Intensamente");
+        peliculaNueva.setdatos(2024,124,true);
 
         ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();
         listaDePeliculas.add(miPelicula);
@@ -67,9 +68,9 @@ public class Main {
 
         System.out.println("Tamaño de la lista: "+listaDePeliculas.size());
         System.out.println("La primera pelicula es: "+listaDePeliculas.get(0).getNombre());
-
         System.out.println(listaDePeliculas.toString());
-
         System.out.println("Pelicula: "+listaDePeliculas.get(0).toString());
+
+
     }
 }
