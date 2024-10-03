@@ -1,9 +1,7 @@
 package com.aluracursos.screenmatch.principal;
 
 import com.aluracursos.screenmatch.exceptions.ErrorEnConversionDeDuracionException;
-import com.aluracursos.screenmatch.modelos.Pelicula;
-import com.aluracursos.screenmatch.modelos.Titulo;
-import com.aluracursos.screenmatch.modelos.TituloOmdb;
+import com.aluracursos.screenmatch.modelos.*;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -23,54 +21,27 @@ public class princioalBusqueda {
     public static void main(String[] args) throws IOException, InterruptedException {
         Scanner scanner = new Scanner(System.in);
         List<Titulo> titulos = new ArrayList<>();
-        Gson gson = new GsonBuilder()
-                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
-                .setPrettyPrinting()
-                .create();
+        BuscarPelicula buscarPelicula = new BuscarPelicula();
 
         while (true){
             System.out.print("Buscar pelicula: ");
             String busqueda = scanner.nextLine();
-            busqueda = URLEncoder.encode(busqueda, "UTF-8");
 
             if (busqueda.equalsIgnoreCase("salir")){
                 break;
             }
 
-            String direccion = "https://www.omdbapi.com/?t="+busqueda+"&apikey=a4ec26f1";
+            Titulo miTitulo = buscarPelicula.searchMovie(busqueda);
 
-            try{
-                HttpClient client = HttpClient.newHttpClient();
-                HttpRequest request = HttpRequest.newBuilder()
-                        .uri(URI.create(direccion))
-                        .build();
-
-                HttpResponse<String> response = client
-                        .send(request, HttpResponse.BodyHandlers.ofString());
-
-                String json = response.body();
-
-                TituloOmdb miTituloOmdb = gson.fromJson(json, TituloOmdb.class);
-
-                Titulo miTitulo = new Titulo(miTituloOmdb);
+            if(miTitulo != null){
                 System.out.println(miTitulo);
-
                 titulos.add(miTitulo);
-
-            } catch (NumberFormatException e)
-            {
-                System.out.println("Orcurrio un error: "+e.getMessage());
-            }catch (IllegalArgumentException e){
-                System.out.println("Error la URI, Verifique la direccion");
-            }catch (ErrorEnConversionDeDuracionException e){
-                System.out.println(e.getMessage());
             }
         }
-        System.out.println(titulos);
 
-        FileWriter fileWriter = new FileWriter("Peliculas.json");
-        fileWriter.write(gson.toJson(titulos));
-        fileWriter.close();
+        scanner.close();
+        CreateJson createJson = new CreateJson();
+        createJson.writeJsonToFile(titulos);
         System.out.println("Finalizo la ejecucion del programa");
     }
 }
