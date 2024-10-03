@@ -1,0 +1,34 @@
+[
+  {
+    "Nombre": "Matrix",
+    "FechaDeLanzamiento": 1993,
+    "DuracionEnMinutos": 60,
+    "IncluidoEnElPlan": false,
+    "SumaDeEvaluaciones": 0.0,
+    "TotalEvaluaciones": 0
+  },
+  {
+    "Nombre": "Encanto",
+    "FechaDeLanzamiento": 2021,
+    "DuracionEnMinutos": 102,
+    "IncluidoEnElPlan": false,
+    "SumaDeEvaluaciones": 0.0,
+    "TotalEvaluaciones": 0
+  },
+  {
+    "Nombre": "Godzilla",
+    "FechaDeLanzamiento": 2014,
+    "DuracionEnMinutos": 123,
+    "IncluidoEnElPlan": false,
+    "SumaDeEvaluaciones": 0.0,
+    "TotalEvaluaciones": 0
+  },
+  {
+    "Nombre": "Sherlock Holmes",
+    "FechaDeLanzamiento": 2009,
+    "DuracionEnMinutos": 128,
+    "IncluidoEnElPlan": false,
+    "SumaDeEvaluaciones": 0.0,
+    "TotalEvaluaciones": 0
+  }
+]
